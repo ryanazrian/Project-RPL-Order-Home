@@ -1,11 +1,14 @@
 # Project-RPL-Order-Home
 This project to complete our assigment for Software Enginering
+1. Ainil Fitri (frontend)
+2. M Ricky Murdana (frontend)
+3. Wiradani R (backend)
 
 #  Penting!!
-*git clone link nya
-*setelah git clone run 'npm install' buat install modul modul nya
-*untuk ionic masuk ke folder,buka terminal run 'ionic serve'
-*'git add' untuk memasukan data
-*'git add .' masukan semua folder
-*'git commit "comemntar"'
-*'git push origin master' masukan ke git di web
+1. git clone link nya
+2. setelah git clone run 'npm install' buat install modul modul nya
+3. untuk ionic masuk ke folder,buka terminal run 'ionic serve'
+4. 'git add' untuk memasukan data
+5. git add .' masukan semua folder
+6. git commit "comemntar"'
+7. git push origin master' masukan ke git di web
