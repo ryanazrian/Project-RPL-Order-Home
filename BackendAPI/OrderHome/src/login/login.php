@@ -1,30 +1,32 @@
 <?php
-	include 'config.php';
-	//get data dari body (method post)
-	if (isset($_POST['username'])) {
-	    $username = $_POST['username'];
-	}
-	if (isset($_POST['password'])) {
-	    $password = $_POST['password'];
-	}
-	//enkripsi password dengan md5
-	$encryptPassword = ($password);
-	//query cek user
-	$queryLogin = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password = '$encryptPassword' ");
-	//cek user kalo ketemu
-	if (mysqli_num_rows($queryLogin)) {
 
-		$row = mysqli_fetch_array($queryLogin);
+  include 'config.php';
 
-		$data = array(
-			'message' => "Login Succeess",
-			//'nama' => $row['nama'],
-			'status' => "200"
-			);
-	} else {
-		$data = array(
-			'message' => "Login Failed"
-			);
-	}
-	echo json_encode($data);
-	?>
+    $postdata = file_get_contents("php://input");
+    $username="";
+    $password="";
+    if (isset($postdata)) {
+        $request = json_decode($postdata);
+        $username = $request->username;
+        $password = $request->password;
+    }
+
+
+    $query_login = mysqli_query($conn, "SELECT * FROM user WHERE username='$username' AND password='$password' ");
+    if(mysqli_num_rows($query_login)){
+
+        $row=mysqli_fetch_assoc($query_login);
+        $data =array(
+            'message' => "Login Success",
+            'data' => $row,
+            'status' => "200"
+        );
+    }
+    else{
+        $data =array(
+            'message' => "Login Failed, Username or Password Wrong",
+            'status' => "404"
+        );
+    }
+    echo json_encode($data);
+?>

@@ -3,18 +3,19 @@
     include 'config.php';
 
       $postdata = file_get_contents("php://input");
-      $username="";
-      $password="";
-      $user_status="";
+      $brand="";
+      $price="";
+      $quantity="";
+      $id_goods="";
       if (isset($postdata)) {
           $request = json_decode($postdata);
-          $username = $request->username;
-          $password = $request->password;
-          $user_status = $request->user_status;
+          $brand = $request->brand;
+          $price = $request->price;
+          $quantity = $request->quantity;
+          $id_goods = $request->id_goods;
 
       }
-      $encrypt_password = md5($password);
-  $sql = mysqli_query($conn,"INSERT INTO user ( username, password,user_status) VALUES ('$username','$encrypt_password', '$user_status')");
+  $sql = mysqli_query($conn,"INSERT INTO stock ( brand, price, quantity) VALUES ('$brand','$price', '$quantity')");
   if($sql){
       $data =array(
           'message' => "Data have been created",

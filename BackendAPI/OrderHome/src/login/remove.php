@@ -1,10 +1,11 @@
  <?php
 include('config.php');
-if($_POST){
-
-  if (isset($_POST['user_id'])) {
-	    $user_id = $_POST['user_id'];
-	}
+  $postdata = file_get_contents("php://input");
+  $user_id="";
+  if (isset($postdata)) {
+      $request = json_decode($postdata);
+      $user_id = $request->user_id;
+  }
 
   $data = mysqli_query($conn, "DELETE FROM user WHERE user_id = $user_id");
   if($data){
@@ -12,6 +13,6 @@ if($_POST){
  }else{
   echo "Upss Something wrong..";
  }
- }
+ 
  $conn->close();
 ?>
