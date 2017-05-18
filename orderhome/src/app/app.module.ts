@@ -9,9 +9,11 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
 import { Daftartoko } from '../pages/daftartoko/daftartoko';
+import { OrderAddresPage } from '../pages/order-addres/order-addres';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     Daftartoko,
-    Login  
+    Login,
+    OrderAddresPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     Daftartoko,
-    Login
+    Login,
+    OrderAddresPage
   ],
   providers: [
     StatusBar,
