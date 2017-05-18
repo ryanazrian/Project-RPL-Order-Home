@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stok
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  <ion-item>
+    <ion-thumbnail item-left>
+      <img src="assets/gambar/galon.png">
+    </ion-thumbnail>
+    <ion-label>Galon</ion-label>
+    <ion-select [(ngModel)]="galon">
+      <ion-option value="aqua">Aqua</ion-option>
+      <ion-option value="vit">Vit</ion-option>
+      <ion-option value="prima">Prima</ion-option>
+    </ion-select>
+  </ion-item>
+ </ion-list>
+
+ <ion-list>
+  <ion-item>
+    <ion-thumbnail item-left>
+      <img src="assets/gambar/12kg.png">
+    </ion-thumbnail>
+     <ion-label>Gas</ion-label>
+    <ion-select [(ngModel)]="gas">
+      <ion-option value="3kg">LPG 3kg</ion-option>
+      <ion-option value="12">LPG 12kg</ion-option>
+    </ion-select>
+  </ion-item>
+ </ion-list>
+
+ <button ion-button block (click)="pesan()">OK</button>
+</ion-content>
+
