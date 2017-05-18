@@ -3,26 +3,21 @@
     include 'config.php';
 
       $postdata = file_get_contents("php://input");
-      $brand="";
-      $price="";
-      $quantity="";
-      $id_goods="";
-      $type="";
       $shop_id="";
+      $shop_name="";
+      $user_id="";
       if (isset($postdata)) {
           $request = json_decode($postdata);
-          $brand = $request->brand;
-          $price = $request->price;
-          $quantity = $request->quantity;
-          $id_goods = $request->id_goods;
-          $type = $request->type;
+          $user_id = $request->user_id;
+          $shop_name = $request->shop_name;
           $shop_id = $request->shop_id;
 
       }
-  $sql = mysqli_query($conn,"INSERT INTO stock ( brand, price, quantity,type,shop_id) VALUES ('$brand','$price', '$quantity','$type','$shop_id')");
+
+  $sql = mysqli_query($conn,"INSERT INTO shop ( user_id, shop_name) VALUES ('$user_id','$shop_name')");
   if($sql){
       $data =array(
-          'message' => "item have been updated",
+          'message' => "Your new shop have been recorded",
           'data' => $request,
           'status' => "200"
       );}
