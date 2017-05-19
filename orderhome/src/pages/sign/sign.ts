@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,ToastController,LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { PilihPage} from '../pilih/pilih';
-
+import { Http } from '@angular/http';
+import { TabsPage} from '../tabs/tabs';
 /*
   Generated class for the SignPage page.
 
@@ -14,11 +15,54 @@ import { PilihPage} from '../pilih/pilih';
   templateUrl: 'sign.html'
 })
 export class SignPage {
+  user: {username?: string, name?: string, email?: string, password?: string, role?: any} = {};
+    submitted = false;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public toastCtrl: ToastController,
+              public http: Http,
+              public loadCtrl: LoadingController) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+              onSignup(form: NgForm) {
+                this.submitted = true;
+                let loading = this.loadCtrl.create({
+                    content: 'Tunggu sebentar...'
+                });
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignPage');
+                if (form.valid) {
+                  loading.present();
+                  let input = JSON.stringify({
+                    username: this.user.username,
+                    name: this.user.name,
+                    email: this.user.email,
+                    password: this.user.password,
+                    role: this.user.role,
+                  });
+                  this.http.post("127.0.0.1/OrderHome/BackEnd/signUpInfo.php",input).subscribe(data => {
+                       loading.dismiss();
+                       let response = data.json();
+                       if(response.status == 200){
+                          this.navCtrl.setRoot(TabsPage);
+
+                       }
+                       this.showAlert(response.message);
+        }, err => {
+           loading.dismiss();
+           this.showError(err);
+        });
+    }
+  }
+  showError(err: any){
+    err.status==0?
+    this.showAlert("Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda"):
+    this.showAlert("Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini");
+  }
+  showAlert(message){
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
   }
 
 masuk(){
