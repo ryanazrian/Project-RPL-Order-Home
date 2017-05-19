@@ -12,3 +12,5 @@ This project to complete our assigment for Software Enginering
 5. git add .' masukan semua folder
 6. git commit "comemntar"'
 7. git push origin master' masukan ke git di web
+
+#Untuk back end,taruh folder BackEnd di htdoc,setelah sebelumnya install xampp

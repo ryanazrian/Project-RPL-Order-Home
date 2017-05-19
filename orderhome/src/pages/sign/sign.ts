@@ -15,7 +15,7 @@ import { TabsPage} from '../tabs/tabs';
   templateUrl: 'sign.html'
 })
 export class SignPage {
-  user: {username?: string, name?: string, email?: string, password?: string, role?: any} = {};
+  user: {username?: string, name?: string, email?: string, password?: string, role?: string,phone_number?:string} = {};
     submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -36,9 +36,10 @@ export class SignPage {
                     name: this.user.name,
                     email: this.user.email,
                     password: this.user.password,
-                    role: this.user.role,
+                    user_status: this.user.role,
+                    phone_number: this.user.phone_number,
                   });
-                  this.http.post("127.0.0.1/OrderHome/BackEnd/signUpInfo.php",input).subscribe(data => {
+                  this.http.post("http://127.0.0.1/OrderHome/BackEnd/signUpInfo.php",input).subscribe(data => {
                        loading.dismiss();
                        let response = data.json();
                        if(response.status == 200){

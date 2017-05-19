@@ -13,8 +13,8 @@ import { OrderAddresPage } from '../pages/order-addres/order-addres';
 import { PilihPage } from '../pages/pilih/pilih';
 import { SignPage } from '../pages/sign/sign';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from 'ionic-native';
+import { Splashscreen } from 'ionic-native';
 import { UserDataProvider } from '../providers/user-data';
 import { Http } from '@angular/http';
 
@@ -52,7 +52,7 @@ import { Http } from '@angular/http';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    Splashscreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserDataProvider
   ]

@@ -10,20 +10,30 @@
 	<ion-thumbnail item-center>
       <img src="assets/gambar/home.png">
     </ion-thumbnail>
-	<ion-list>
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
+    <form #LoginForm="ngForm" novalidate>
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label stacked color="primary">Username</ion-label>
+          <ion-input [(ngModel)]="user.username" placeholder="Username" name="username" type="text" #username="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+          Username is required
+        </p>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
+        <ion-item>
+          <ion-label stacked color="primary">Password</ion-label>
+          <ion-input [(ngModel)]="user.password" placeholder="Password" name="password" type="password" #password="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+          Password is required
+        </p>
 
-</ion-list>
+      </ion-list>
+      <button ion-button block (click)="onLogin(LoginForm)">Log In</button>
+    </form>
 
-  <button ion-button block (click)="masuk()">Log In</button>
   <div class="row" padding>
 	    <div class="col">
 	        <div class="text-center">
