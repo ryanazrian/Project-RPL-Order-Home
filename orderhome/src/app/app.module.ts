@@ -10,9 +10,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
 import { Daftartoko } from '../pages/daftartoko/daftartoko';
 import { OrderAddresPage } from '../pages/order-addres/order-addres';
+import { PilihPage } from '../pages/pilih/pilih';
+import { SignPage } from '../pages/sign/sign';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UserDataProvider } from '../providers/user-data';
+import { Http } from '@angular/http';
+
 
 
 @NgModule({
@@ -24,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     Daftartoko,
     Login,
-    OrderAddresPage
+    OrderAddresPage,
+    PilihPage,
+    SignPage
   ],
   imports: [
     BrowserModule,
@@ -39,12 +46,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     Daftartoko,
     Login,
-    OrderAddresPage
+    OrderAddresPage,
+    PilihPage,
+    SignPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserDataProvider
   ]
+
 })
 export class AppModule {}

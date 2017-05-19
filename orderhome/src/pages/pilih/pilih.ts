@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { NgForm } from '@angular/forms';
-import { PilihPage} from '../pilih/pilih';
-
+import { SignPage } from '../sign/sign';
 /*
-  Generated class for the SignPage page.
+  Generated class for the PilihPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-sign',
-  templateUrl: 'sign.html'
+  selector: 'page-pilih',
+  templateUrl: 'pilih.html'
 })
-export class SignPage {
+export class PilihPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SignPage');
+    console.log('ionViewDidLoad PilihPage');
   }
-
-masuk(){
-  this.navCtrl.push(PilihPage);
-}
+  customer(){
+    this.navCtrl.push(SignPage);
+  }
+  seller(){
+    this.navCtrl.push(SignPage);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { PilihPage } from '../pilih/pilih';
 import { TabsPage } from '../tabs/tabs';
 
 
@@ -18,5 +19,7 @@ export class Login {
   masuk(){
     this.navCtrl.push(TabsPage);
   }
-
+  onSignup(){
+      this.navCtrl.push(PilihPage);
+  }
 }

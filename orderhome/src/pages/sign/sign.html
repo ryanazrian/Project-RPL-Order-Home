@@ -1,29 +1,52 @@
-<ion-view title="Signup">
-    <ion-content padding="'true'" scroll="false" class="has-header">
-        <form class="list">
-            <ion-list>
-                <label class="item item-input">
-                    <span class="input-label">Name</span>
-                    <input type="text" placeholder="" ng-model="data.name">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="email" placeholder="" ng-model="data.username">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Password</span>
-                    <input type="password" placeholder="" ng-model="data.password">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Phone</span>
-                    <input type="number" placeholder="" ng-model="data.phone_number">
-                </label>
-            </ion-list>
-            <label class="item item-input">
-                <span class="input-label">Email</span>
-                <input type="text" placeholder="" ng-model="data.email">
-            </label>
+<ion-header>
+	<ion-navbar>
+		<ion-title>User Register</ion-title>
+	</ion-navbar>
+</ion-header>
 
-            <button ng-click="signup(data)" class="button button-stable button-block ">Sign up</button>
-        </form>
-    </ion-content>
+<ion-content class="login-page">
+	<form #signupForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label stacked color="primary">Nama lengkap</ion-label>
+				<ion-input [(ngModel)]="user.name" placeholder="Nama lengkap" name="nama" type="text" #nama="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
+				Nama lengkap is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Email</ion-label>
+				<ion-input [(ngModel)]="user.email" placeholder="Email" name="email" type="email" #email="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+				Email is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Username</ion-label>
+				<ion-input [(ngModel)]="user.username" placeholder="Username" name="username" type="text" #username="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+				Username is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Password</ion-label>
+				<ion-input [(ngModel)]="user.password" placeholder="Password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+				Password is required
+			</p>
+		</ion-list>
+
+		<div padding>
+			<button ion-button (click)="onSignup(signupForm)" type="submit" block>Daftar</button>
+		</div>
+	</form>
+
+</ion-content>
