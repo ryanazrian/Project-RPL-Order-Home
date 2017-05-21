@@ -1,10 +1,10 @@
 <ion-header>
 	<ion-navbar>
-		<ion-title>User Register</ion-title>
+		<ion-title>Seller Register</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content class="login-page">
+<ion-content class="SignPageSeller">
 	<form #signupForm="ngForm" novalidate>
 		<ion-list no-lines>
 			<ion-item>
@@ -45,7 +45,7 @@
 
 			<ion-item>
 							<ion-label stacked color="primary">Status</ion-label>
-							<ion-input [(ngModel)]="user.role" placeholder="customer" name="role" type="text" #role="ngModel" required>
+							<ion-input [(ngModel)]="user.role" placeholder="seller" name="role" type="text" #role="ngModel" required>
 							</ion-input>
 						</ion-item>
 						<p ion-text [hidden]="role.valid || submitted == false" color="danger" padding-left>

@@ -12,6 +12,8 @@ import { Daftartoko } from '../pages/daftartoko/daftartoko';
 import { OrderAddresPage } from '../pages/order-addres/order-addres';
 import { PilihPage } from '../pages/pilih/pilih';
 import { SignPage } from '../pages/sign/sign';
+import { SignPageSeller } from '../pages/signup-seller/signup-seller';
+
 
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
@@ -31,7 +33,9 @@ import { Http } from '@angular/http';
     Login,
     OrderAddresPage,
     PilihPage,
-    SignPage
+    SignPage,
+    SignPageSeller,
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { Http } from '@angular/http';
     Login,
     OrderAddresPage,
     PilihPage,
-    SignPage
+    SignPage,
+    SignPageSeller,
+  
   ],
   providers: [
     StatusBar,

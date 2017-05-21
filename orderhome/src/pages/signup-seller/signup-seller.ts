@@ -11,10 +11,10 @@ import { TabsPage} from '../tabs/tabs';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-sign',
-  templateUrl: 'sign.html'
+  selector: 'page-signup-seller',
+  templateUrl: 'signup-seller.html'
 })
-export class SignPage {
+export class SignPageSeller {
   user: {username?: string, name?: string, email?: string, password?: string, role?:string,phone_number?:string} = {};
     submitted = false;
   constructor(public navCtrl: NavController,
@@ -36,7 +36,7 @@ export class SignPage {
                     name: this.user.name,
                     email: this.user.email,
                     password: this.user.password,
-                    user_status: this.user.role="customer",
+                    user_status: this.user.role="seller",
                     phone_number: this.user.phone_number,
                   });
                   this.http.post("http://127.0.0.1/OrderHome/BackEnd/signUpInfo.php",input).subscribe(data => {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SignPage } from '../sign/sign';
+import { SignPageSeller } from '../signup-seller/signup-seller';
 /*
   Generated class for the PilihPage page.
 
@@ -22,6 +23,6 @@ export class PilihPage {
     this.navCtrl.push(SignPage);
   }
   seller(){
-    this.navCtrl.push(SignPage);
+    this.navCtrl.push(SignPageSeller);
   }
 }
