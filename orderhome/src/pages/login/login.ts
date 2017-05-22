@@ -4,6 +4,7 @@ import { TabsPage } from '../tabs/tabs';
 import { NavController,ToastController,LoadingController, NavParams  } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { NgForm } from '@angular/forms';
+import { UserDataProvider } from '../../providers/user-data';
 
 @Component({
   selector: 'page-login',
@@ -16,7 +17,8 @@ export class Login {
               public navParams: NavParams,
               public http: Http,
               public toastCtrl: ToastController,
-              public loadCtrl: LoadingController,) {}
+              public loadCtrl: LoadingController,
+              public userDataProvider:UserDataProvider) {}
 
   ionViewWillEnter(){
 
@@ -37,7 +39,9 @@ export class Login {
            let response = data.json();
            loading.dismiss();
            if(response.status == 200) {
-
+             let user=response.data;
+             this.userDataProvider.login(user.user_id,user.username,user.user_status,user.name,user.phone_number,user.email);
+             console.log(user);
              this.navCtrl.push(TabsPage);
 
            } else {

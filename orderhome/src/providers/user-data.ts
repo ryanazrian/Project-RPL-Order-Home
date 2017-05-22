@@ -34,20 +34,21 @@ export class UserDataProvider {
     }
   }
 
-  setToken(token) {
-    this.storage.set('token', token);
-  }
+
 
   setId(id) {
     this.storage.set('id', id);
   }
 
-  login(username, name,contact,email,points) {
+  login(user_id,username,user_status,name,phone_number,email) {
+    console.log("ighjk");
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.storage.set('name', name);
-    this.storage.set('contact', contact);
-    this.storage.set('email', email);
-    this.storage.set('username',username);
+    this.storage.set('user_id', user_id);
+    this.storage.set('username', username);
+    this.storage.set('user_status', user_status);
+    this.storage.set('name',name);
+    this.storage.set('phone_number',phone_number);
+    this.storage.set('email',email);
     this.events.publish('user:login');
     this.loginState = true;
   }
@@ -62,7 +63,7 @@ export class UserDataProvider {
     this.storage.remove(this.HAS_LOGGED_IN);
     this.storage.remove('username');
     this.storage.remove('token');
-    this.storage.remove('id');
+    this.storage.remove('user_id');
     this.storage.remove('name');
     this.events.publish('user:logout');
     this.loginState = false;
@@ -76,14 +77,7 @@ export class UserDataProvider {
      });
   }
 
-  getToken() {
-   this.storage.get('token').then((val) => {
-      this.token = val;
-    });
 
-   return this.token;
-
-  }
 
   getUsername() {
     return this.storage.get('username').then((value) => {

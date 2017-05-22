@@ -3,6 +3,7 @@ import { Events, MenuController, Nav, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
+import { AccountPage } from '../pages/account/account';
 
 import { Login } from '../pages/login/login';
 @Component({
@@ -10,7 +11,7 @@ import { Login } from '../pages/login/login';
 })
 export class MyApp {
   rootPage:any = Login;
-
+ @ViewChild(Nav) nav: Nav;
   constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -18,5 +19,8 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+  openPage(){
+    this.nav.setRoot(AccountPage);
   }
 }
