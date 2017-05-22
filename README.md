@@ -13,4 +13,6 @@ This project to complete our assigment for Software Enginering
 6. git commit "comemntar"'
 7. git push origin master' masukan ke git di web
 
-#Untuk back end,taruh folder BackEnd di htdoc,setelah sebelumnya install xampp
+# Penting lagi!!
+1. Untuk back end,taruh folder BackEnd di htdoc,setelah sebelumnya install xampp
+2. Import sql di php my admin,setelah sebelumnya mengaktifkan xampp nya
