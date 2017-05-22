@@ -47,7 +47,6 @@ export class UserDataProvider {
     this.storage.set('name', name);
     this.storage.set('contact', contact);
     this.storage.set('email', email);
-    this.storage.set('points', points);
     this.storage.set('username',username);
     this.events.publish('user:login');
     this.loginState = true;
@@ -103,11 +102,6 @@ export class UserDataProvider {
   }
   getContact() {
     return this.storage.get('contact').then((value) => {
-      return value;
-    });
-  }
-  getPoints() {
-    return this.storage.get('points').then((value) => {
       return value;
     });
   }

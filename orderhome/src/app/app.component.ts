@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Events, MenuController, Nav, Platform } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
 
 import { Login } from '../pages/login/login';
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.template.html'
 })
 export class MyApp {
   rootPage:any = Login;

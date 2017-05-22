@@ -5,6 +5,7 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { Daftartoko } from '../daftartoko/daftartoko';
 import { OrderAddresPage } from '../order-addres/order-addres';
+import { AccountPage } from '../account/account';
 @Component({
   templateUrl: 'tabs.html'
 })
