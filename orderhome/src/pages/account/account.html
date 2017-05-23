@@ -10,16 +10,17 @@
 <ion-content class="outer-content">
   <div padding-top text-center *ngIf="username">
     <ion-icon name="contact"></ion-icon>
-    <h2>Username : {{username}}</h2>
+    <h4>Username : {{username}}</h4>
     <h4>Nama : {{name}}</h4>
     <h4>Email : {{email}}</h4>
-    <h4>Contact : {{contact}}</h4>
+    <h4>Contact : {{PhoneNumber}}</h4>
 
 
     <ion-list text-center>
       <!-- <button ion-item (click)="updatePicture()">Update Picture</button>
       <button ion-item (click)="changeUsername()">Change Username</button>
       <button ion-item (click)="changePassword()">Change Password</button> -->
+      <button ion-button (click)="update()">Update Profile</button>
       <button ion-button (click)="logout()">Logout</button>
     </ion-list>
   </div>

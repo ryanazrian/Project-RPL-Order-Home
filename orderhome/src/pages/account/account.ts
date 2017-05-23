@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-
 import { AlertController, NavController } from 'ionic-angular';
-
 import { Login } from '../login/login';
+import { UpdateProfilePage } from '../update-profile/update-profile';
 import { UserDataProvider } from '../../providers/user-data';
 
 
@@ -14,8 +13,8 @@ export class AccountPage {
   username: string;
   name: string;
   email: string;
-  contact: string;
-  points: number;
+  PhoneNumber: number;
+
 
   constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserDataProvider) {
 
@@ -24,9 +23,9 @@ export class AccountPage {
   ngAfterViewInit() {
     this.getUsername();
     this.getName();
-    this.getContact();
     this.getEmail();
-  
+    this.getPhoneNumber();
+
   }
 
 
@@ -46,9 +45,9 @@ export class AccountPage {
       this.name = username;
     });
   }
-  getContact() {
-    this.userData.getContact().then((username) => {
-      this.contact = username;
+  getPhoneNumber() {
+    this.userData.getPhoneNumber().then((username) => {
+      this.PhoneNumber = username;
     });
   }
   getEmail() {
@@ -56,11 +55,14 @@ export class AccountPage {
       this.email = username;
     });
   }
-
-
-
   logout() {
     this.userData.logout();
     this.nav.setRoot(Login);
   }
+  update() {
+    this.nav.setRoot(UpdateProfilePage);
+  }
+//  updateProfile() {
+//    this.nav.setRoot(UpdateProfilePage);
+//  }
 }

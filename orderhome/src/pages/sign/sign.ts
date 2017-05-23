@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { PilihPage} from '../pilih/pilih';
 import { Http } from '@angular/http';
 import { TabsPage} from '../tabs/tabs';
+import { UserDataProvider } from '../../providers/user-data';
 /*
   Generated class for the SignPage page.
 
@@ -21,6 +22,7 @@ export class SignPage {
               public navParams: NavParams,
               public toastCtrl: ToastController,
               public http: Http,
+              public userDataProvider:UserDataProvider,
               public loadCtrl: LoadingController) {}
 
               onSignup(form: NgForm) {
@@ -43,6 +45,8 @@ export class SignPage {
                        loading.dismiss();
                        let response = data.json();
                        if(response.status == 200){
+                         let user=response.data;
+                         this.userDataProvider.signup(user.username);
                           this.navCtrl.setRoot(TabsPage);
 
                        }

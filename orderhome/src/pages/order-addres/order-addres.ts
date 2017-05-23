@@ -30,7 +30,7 @@ export class OrderAddresPage {
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    this.getCurrentLocation();
+    this.getCurrentLocation()
     this.getLatitudeLongitude("ipb dramaga");
   }
   getLatitudeLongitude(address){

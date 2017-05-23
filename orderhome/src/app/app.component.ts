@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
 import { AccountPage } from '../pages/account/account';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { Login } from '../pages/login/login';
 @Component({
@@ -22,5 +23,8 @@ export class MyApp {
   }
   openPage(){
     this.nav.setRoot(AccountPage);
+  }
+  openPage1(){
+    this.nav.setRoot(TabsPage);
   }
 }

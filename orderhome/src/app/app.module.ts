@@ -17,6 +17,7 @@ import { SignPage } from '../pages/sign/sign';
 import { SignPageSeller } from '../pages/signup-seller/signup-seller';
 import { AccountPage } from '../pages/account/account';
 import { PopoverPage } from '../pages/popover/popover';
+import { UpdateProfilePage } from '../pages/update-profile/update-profile';
 
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
@@ -41,7 +42,8 @@ import { Http } from '@angular/http';
     SignPage,
     SignPageSeller,
     AccountPage,
-    PopoverPage
+    PopoverPage,
+    UpdateProfilePage
 
   ],
   imports: [
@@ -62,7 +64,8 @@ import { Http } from '@angular/http';
     SignPage,
     SignPageSeller,
     AccountPage,
-    PopoverPage
+    PopoverPage,
+    UpdateProfilePage
 
   ],
   providers: [

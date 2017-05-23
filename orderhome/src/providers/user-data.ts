@@ -37,11 +37,10 @@ export class UserDataProvider {
 
 
   setId(id) {
-    this.storage.set('id', id);
+    this.storage.set('user_id', id);
   }
 
   login(user_id,username,user_status,name,phone_number,email) {
-    console.log("ighjk");
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.storage.set('user_id', user_id);
     this.storage.set('username', username);
@@ -54,31 +53,30 @@ export class UserDataProvider {
   }
 
   signup(username) {
-    //this.storage.set(this.HAS_LOGGED_IN, true);
+    this.storage.set(this.HAS_LOGGED_IN, true);
     this.storage.set('username',username);
     this.events.publish('user:signup');
   }
 
   logout() {
     this.storage.remove(this.HAS_LOGGED_IN);
-    this.storage.remove('username');
-    this.storage.remove('token');
     this.storage.remove('user_id');
-    this.storage.remove('name');
+    this.storage.remove('username');
+    this.storage.remove('user_status');
+    this.storage.remove('phone_number');
+    this.storage.remove('email');
+    this.storage.remove('token');
     this.events.publish('user:logout');
     this.loginState = false;
     // location.reload();
   }
 
   getID() {
-     this.storage.get('id').then((res) => {
+     return this.storage.get('user_id').then((res) => {
         this.ids = res;
         return this.ids;
      });
   }
-
-
-
   getUsername() {
     return this.storage.get('username').then((value) => {
       return value;
@@ -94,8 +92,8 @@ export class UserDataProvider {
       return value;
     });
   }
-  getContact() {
-    return this.storage.get('contact').then((value) => {
+  getPhoneNumber() {
+    return this.storage.get('phone_number').then((value) => {
       return value;
     });
   }
