@@ -3,18 +3,25 @@
     include 'config.php';
 
       $postdata = file_get_contents("php://input");
-      $brand="";
-      $price="";
-      $quantity="";
-      $id_goods="";
+      $username="";
+      $name="";
+      $phone_number="";
+      $email="";
+      $user_id="";
+
+
       if (isset($postdata)) {
           $request = json_decode($postdata);
-          $brand = $request->brand;
-          $price = $request->price;
-          $quantity = $request->quantity;
-          $id_goods = $request->id_goods;
+          $username = $request->username;
+          $name= $request->name;
+          $phone_number=$request->phone_number;
+          $email=$request->email;
+          $user_id=$request->user_id;
+
       }
-  $sql = mysqli_query($conn,"UPDATE stock SET brand = '$brand', price = '$price', quantity = '$quantity' WHERE id_goods = '$id_goods'");
+
+  $sql = mysqli_query($conn,"UPDATE user SET username = '$username', name = '$name',phone_number = '$phone_number', email = '$email'
+            WHERE user_id = '$user_id' ");
     if($sql){
       $data =array(
           'message' => "Data have been updated",
