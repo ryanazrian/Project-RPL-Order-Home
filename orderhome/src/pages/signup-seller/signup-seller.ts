@@ -4,10 +4,10 @@ import { NgForm } from '@angular/forms';
 import { PilihPage} from '../pilih/pilih';
 import { Http } from '@angular/http';
 import { TabsPage} from '../tabs/tabs';
+import { TambahAddresPage } from '../tambah/tambah';
 import { UserDataProvider } from '../../providers/user-data';
 /*
   Generated class for the SignPage page.
-
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
@@ -46,8 +46,8 @@ export class SignPageSeller {
                        let response = data.json();
                        if(response.status == 200){
                          let user=response.data;
-                         this.userDataProvider.signup(user.username);
-                          this.navCtrl.setRoot(TabsPage);
+                         this.userDataProvider.login(user.user_id,user.username,user.user_status,user.name,user.phone_number,user.email);
+                          this.navCtrl.setRoot(TambahAddresPage);
 
                        }
                        this.showAlert(response.message);

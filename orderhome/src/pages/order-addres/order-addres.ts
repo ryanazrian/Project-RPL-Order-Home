@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef} from '@angular/core';
 import { NavController, NavParams ,ToastController } from 'ionic-angular';
 import { GoogleMap } from 'ionic-native';
 import { Geolocation} from 'ionic-native';
+import { UserDataProvider } from '../../providers/user-data';
 
 declare var google: any;
 
@@ -79,4 +80,5 @@ export class OrderAddresPage {
     });
     toast.present();
   }
+
 }

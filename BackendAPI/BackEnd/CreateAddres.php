@@ -5,23 +5,21 @@
       $postdata = file_get_contents("php://input");
       $user_id="";
       $addres_name="";
-      $addres_province="";
-      $addres_city="";
-      $addres_state="";
-      $addres_street="";
+      $addres_user="";
+      $latitude="";
+      $longitude="";
 
       if (isset($postdata)) {
           $request = json_decode($postdata);
           $user_id = $request->user_id;
           $addres_name = $request->addres_name;
-          $addres_province = $request->addres_province;
-          $addres_city= $request->addres_city;
-          $addres_state=$request->addres_state;
-          $addres_street=$request->addres_street;
+          $addres_user = $request->addres_user;
+          $latitude = $request->latitude;
+          $longitude = $request->longitude;
       }
 
-      $sql = mysqli_query($conn,"INSERT INTO addres ( user_id, addres_name, addres_province, addres_city, addres_state, addres_street)
-      VALUES ('$user_id','$addres_name', '$addres_province','$addres_city','$addres_state','$addres_street')");
+      $sql = mysqli_query($conn,"INSERT INTO addres ( user_id, addres_name, addres_user,latitude,longitude)
+      VALUES ('$user_id','$addres_name', '$addres_user','$longitude',  '$latitude')");
 
   if($sql){
       $data =array(

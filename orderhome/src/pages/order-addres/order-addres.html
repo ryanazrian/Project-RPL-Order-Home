@@ -6,13 +6,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>orderAddres</ion-title>
+    <ion-title>OrderAddres</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <body>
+     <div class="pac-card" id="pac-card">
+       <div>
+         <div id="title" >
+           Please enter your addres
+         </div>
+       </div>
+       <div id="pac-container">
+         <input id="pac-input" type="text"
+             placeholder="Enter your pick up point">
+          <input id="pac-input" type="text"
+              placeholder="Enter your destination">
+       </div>
+     </div>
+     <div #map id="map" ></div>
+     <div id="infowindow-content">
+       <img src="" width="16" height="16" id="place-icon">
+       <span id="place-name"  class="title"></span><br>
+       <span id="place-address"></span>
+     </div>
+  </body>
 
-    <div #map id="map" ></div>
 </ion-content>

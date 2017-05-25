@@ -86,26 +86,26 @@ export class UpdateProfilePage {
            if(response.status == 200){
              let user=response.data;
              this.userDataProvider.signup(user.username);
-              this.navCtrl.setRoot(AccountPage);
+              this.navCtrl.push(AccountPage);
 
            }
            this.showAlert(response.message);
-}, err => {
-loading.dismiss();
-this.showError(err);
-});
-}
-}
-showError(err: any){
-err.status==0?
-this.showAlert("Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda"):
-this.showAlert("Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini");
-}
-showAlert(message){
-let toast = this.toastCtrl.create({
-message: message,
-duration: 3000
-});
-toast.present();
-}
+      }, err => {
+      loading.dismiss();
+      this.showError(err);
+      });
+      }
+      }
+      showError(err: any){
+      err.status==0?
+      this.showAlert("Tidak ada koneksi. Cek kembali sambungan Internet perangkat Anda"):
+      this.showAlert("Tidak dapat menyambungkan ke server. Mohon muat kembali halaman ini");
+      }
+      showAlert(message){
+      let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+      });
+      toast.present();
+      }
 }
