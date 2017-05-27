@@ -1,0 +1,69 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-list no-border>
+          <ion-item>
+          <ion-label>Galon</ion-label>
+            <img src='img/galon.jpg' width="15%" height="18%" item-left>
+            <ion-select name="galon">
+                    <ion-option value="aqua">Aqua</ion-option>
+                    <ion-option value="vit">Vit</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-grid>
+            <ion-row justify-content-between>
+              <ion-col col-3>
+                Rp.{{galonharga}}
+              </ion-col>
+              <ion-col col-3>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon icon-only name="remove-circle" (click)="galonkurang()"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      {{jumlahgalon}}
+                    </ion-col>
+                    <ion-col>
+                      <ion-icon icon-only name="add-circle" (click)="galontambah()"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-item>
+          <ion-label>LPG</ion-label>
+            <img src='img/lpg.jpg' width="22%" height="22%" item-left>
+               <ion-select name="LPG">
+                    <ion-option value="satu">3 kg</ion-option>
+                    <ion-option value="dua">12 kg</ion-option>
+                </ion-select>
+          </ion-item>
+        </ion-list>
+         <ion-grid>
+            <ion-row justify-content-between>
+              <ion-col col-3>
+                Rp.{{hargalpg}}
+              </ion-col>
+              <ion-col col-3>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon icon-only name="remove-circle" (click)="lpgkurang()"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      {{jumlahlpg}}
+                    </ion-col>
+                    <ion-col>
+                      <ion-icon icon-only name="add-circle" (click)="lpgtambah()"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      <button padding ion-button block (click)="pindahAlamat()">OK</button>

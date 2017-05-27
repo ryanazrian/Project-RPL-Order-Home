@@ -1,7 +1,15 @@
 <ion-header>
 	<ion-navbar>
-		<ion-title>Update Profile</ion-title>
-	</ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Update Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
 </ion-header>
 
 <ion-content class="UpdateProfilePage">
@@ -45,7 +53,7 @@
 		</ion-list>
 
 		<div padding>
-			<button ion-button (click)="onSignup(signupForm)" type="submit" block>Daftar</button>
+			<button ion-button (click)="onSignup(signupForm)" type="submit" block>Ubah Profile</button>
 		</div>
 	</form>
 

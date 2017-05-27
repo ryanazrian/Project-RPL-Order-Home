@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
 import { AccountPage } from '../pages/account/account';
+import { ShowAddresPage } from '../pages/show-addres/show-addres';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { Login } from '../pages/login/login';
@@ -21,8 +22,11 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
-  openPage(){
+  openPageAccount(){
     this.nav.setRoot(AccountPage);
+  }
+  openPageAddres(){
+    this.nav.setRoot(ShowAddresPage);
   }
   openPage1(){
     this.nav.setRoot(TabsPage);

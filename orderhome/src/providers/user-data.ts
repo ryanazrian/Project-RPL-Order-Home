@@ -52,6 +52,13 @@ export class UserDataProvider {
     this.loginState = true;
   }
 
+  addres(address_name,address_user,lat,lng) {
+    this.storage.set('addres_name', address_name);
+    this.storage.set('address_user', address_user);
+    this.storage.set('latitude', lat);
+    this.storage.set('longitude',lng);
+  }
+
   signup(username) {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.storage.set('username',username);
@@ -66,6 +73,10 @@ export class UserDataProvider {
     this.storage.remove('phone_number');
     this.storage.remove('email');
     this.storage.remove('token');
+    this.storage.remove('addres_name');
+    this.storage.remove('address_user');
+    this.storage.remove('latitude');
+    this.storage.remove('longitude');
     this.events.publish('user:logout');
     this.loginState = false;
     // location.reload();
@@ -94,6 +105,26 @@ export class UserDataProvider {
   }
   getPhoneNumber() {
     return this.storage.get('phone_number').then((value) => {
+      return value;
+    });
+  }
+  getAddresName() {
+    return this.storage.get('addres_name').then((value) => {
+      return value;
+    });
+  }
+  getAddresUser() {
+    return this.storage.get('addres_user').then((value) => {
+      return value;
+    });
+  }
+  getlongitude() {
+    return this.storage.get('longitude').then((value) => {
+      return value;
+    });
+  }
+  getlatitude() {
+    return this.storage.get('latitude').then((value) => {
       return value;
     });
   }

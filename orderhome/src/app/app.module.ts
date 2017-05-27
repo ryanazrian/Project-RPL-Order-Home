@@ -19,10 +19,14 @@ import { AccountPage } from '../pages/account/account';
 import { PopoverPage } from '../pages/popover/popover';
 import { UpdateProfilePage } from '../pages/update-profile/update-profile';
 import { TambahAddresPage } from '../pages/tambah/tambah';
+import { ShowAddresPage } from '../pages/show-addres/show-addres';
+
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
 import { UserDataProvider } from '../providers/user-data';
 import { Http } from '@angular/http';
+import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
+import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 
 @Component({
   templateUrl: 'app.template.html'
@@ -44,7 +48,8 @@ import { Http } from '@angular/http';
     AccountPage,
     PopoverPage,
     UpdateProfilePage,
-    TambahAddresPage
+    TambahAddresPage,
+    ShowAddresPage
 
   ],
   imports: [
@@ -67,7 +72,8 @@ import { Http } from '@angular/http';
     AccountPage,
     PopoverPage,
     UpdateProfilePage,
-    TambahAddresPage 
+    TambahAddresPage,
+    ShowAddresPage
 
   ],
   providers: [
@@ -75,7 +81,8 @@ import { Http } from '@angular/http';
     Splashscreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserDataProvider,
-    Storage
+    Storage,
+    
   ]
 
 })

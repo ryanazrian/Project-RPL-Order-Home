@@ -4,19 +4,18 @@ import { NgForm } from '@angular/forms';
 import { PilihPage} from '../pilih/pilih';
 import { Http } from '@angular/http';
 import { TabsPage} from '../tabs/tabs';
+import { ShowAddresPage} from '../show-addres/show-addres';
 import { UserDataProvider } from '../../providers/user-data';
-
-
 declare var google: any;
-
 /*
-  Generated class for the TambahPage page.
+  Generated class for the TambahAddresPage page.
+
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-tambah',
-  templateUrl: 'tambah.html'
+  selector: 'page-tambah-addres',
+  templateUrl: 'tambah-addres.html'
 })
 export class TambahAddresPage {
   user: {username?: string,user_id?:string} = {};
@@ -162,7 +161,7 @@ export class TambahAddresPage {
               let response = data.json();
                if(response.status == 200){
                  this.userDataProvider.addres(this.lokasi.address_name,this.lokasi.address_user,this.lokasi.lat,this.lokasi.lng);
-                  this.navCtrl.setRoot(TabsPage);
+                  this.navCtrl.setRoot(ShowAddresPage);
                   }
                   this.showAlert(response.message);
               }, err => {
@@ -196,4 +195,4 @@ export class TambahAddresPage {
            this.navCtrl.push(PilihPage);
           }
 
-}
+  }

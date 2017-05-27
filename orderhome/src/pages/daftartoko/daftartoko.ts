@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { OrderPage } from '../order/order';
 /**
  * Generated class for the Daftartoko page.
  *
@@ -20,5 +20,7 @@ export class Daftartoko {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Daftartoko');
   }
-
+  pesan(){
+  		this.navCtrl.push(OrderPage);
+  	}
 }

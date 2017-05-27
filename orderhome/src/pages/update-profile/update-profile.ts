@@ -4,6 +4,9 @@ import { Http } from '@angular/http';
 import { UserDataProvider } from '../../providers/user-data';
 import { NgForm } from '@angular/forms';
 import { AccountPage} from '../account/account';
+import { PopoverPage } from '../popover/popover';
+import { PopoverController } from 'ionic-angular';
+
 /*
   Generated class for the UpdateProfilePage page.
 
@@ -23,6 +26,7 @@ export class UpdateProfilePage {
               public toastCtrl: ToastController,
               public http: Http,
               public userDataProvider:UserDataProvider,
+              public popoverCtrl: PopoverController,
               public loadCtrl: LoadingController) {}
 
   ngAfterViewInit() {
@@ -33,7 +37,10 @@ export class UpdateProfilePage {
                 this.getID();
 
               }
-
+              presentPopover(event: Event) {
+                  let popover = this.popoverCtrl.create(PopoverPage);
+                  popover.present({ ev: event });
+                }
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpdateProfilePage');
   }
