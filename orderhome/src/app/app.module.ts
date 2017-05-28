@@ -4,6 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
+import { LocationSelect } from '../pages/location-select/location-select';
+import { Connectivity } from '../providers/connectivity-service';
+import { GoogleMaps } from '../providers/google-maps';
+import { Network } from '@ionic-native/network';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -25,8 +31,7 @@ import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
 import { UserDataProvider } from '../providers/user-data';
 import { Http } from '@angular/http';
-import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
-import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+
 
 @Component({
   templateUrl: 'app.template.html'
@@ -49,7 +54,8 @@ import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
     PopoverPage,
     UpdateProfilePage,
     TambahAddresPage,
-    ShowAddresPage
+    ShowAddresPage,
+     LocationSelect
 
   ],
   imports: [
@@ -73,7 +79,8 @@ import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
     PopoverPage,
     UpdateProfilePage,
     TambahAddresPage,
-    ShowAddresPage
+    ShowAddresPage,
+     LocationSelect
 
   ],
   providers: [
@@ -82,7 +89,11 @@ import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserDataProvider,
     Storage,
-    
+    Connectivity,
+    GoogleMaps,
+    Network,
+    Geolocation,
+
   ]
 
 })
