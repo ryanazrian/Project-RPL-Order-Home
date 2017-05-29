@@ -12,7 +12,7 @@
     </button>
     <ion-title>Address</ion-title>
     <ion-buttons end>
-      <button ion-button block (click)="tambahRecord()">
+      <button ion-button (click)="tambahRecord()">
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -50,6 +50,6 @@
 
   </ion-card>
   <ion-fab right bottom>
-    <button ion-fab color (click)="blue"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color (click)="blue"><ion-icon name="add()"></ion-icon></button>
   </ion-fab>
 </ion-content>

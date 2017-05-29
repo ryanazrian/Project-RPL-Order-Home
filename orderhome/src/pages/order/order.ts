@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { OrderAddresPage } from '../order-addres/order-addres';
+import { LocationSelect } from '../location-select/location-select';
 import {  NavController, NavParams, Tabs } from 'ionic-angular';
 
 @Component({
+  selector: 'order',
     templateUrl: 'order.html'
 })
 export class OrderPage {
-	tab:Tabs;
+  tab:Tabs;
 	jumlahgalon=0;
 	galonharga=0;
 	hargalpg=0;
@@ -39,11 +40,9 @@ export class OrderPage {
 		this.hargalpg = this.hargalpg + 15000;
 	}
 
-	ionViewDidLoad() {
-    console.log('ionViewDidLoad AlamatPage');
-  }
+
 
 	pindahAlamat(){
-		this.navCtrl.push(OrderAddresPage);
+		this.navCtrl.push(LocationSelect);
 	}
  }

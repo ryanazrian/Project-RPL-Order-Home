@@ -1,13 +1,18 @@
 import { NavController, Platform, ViewController } from 'ionic-angular';
 import { Component, ElementRef, ViewChild, NgZone } from '@angular/core';
+import {  NavParams,ToastController,LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '../../providers/google-maps';
+import { TabsPage} from '../tabs/tabs';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-location-select',
   templateUrl: 'location-select.html'
 })
 export class LocationSelect {
+lokasi: {lokasi_name?: string,lat?: string, lng?: string} = {};
+
 
     @ViewChild('map') mapElement: ElementRef;
     @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
@@ -22,7 +27,15 @@ export class LocationSelect {
     saveDisabled: boolean;
     location: any;
 
-    constructor(public navCtrl: NavController, public zone: NgZone, public maps: GoogleMaps, public platform: Platform, public geolocation: Geolocation, public viewCtrl: ViewController) {
+    constructor(public navCtrl: NavController,
+                public zone: NgZone,
+                public maps: GoogleMaps,
+                public platform: Platform,
+                public loadCtrl: LoadingController,
+                public toastCtrl: ToastController,
+                public http: Http,
+                public geolocation: Geolocation,
+                public viewCtrl: ViewController) {
         this.searchDisabled = true;
         this.saveDisabled = true;
     }
@@ -102,8 +115,11 @@ export class LocationSelect {
         this.viewCtrl.dismiss(this.location);
     }
 
+
     close(){
         this.viewCtrl.dismiss();
     }
+
+
 
 }

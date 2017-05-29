@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverController } from 'ionic-angular';
-import { TambahAddresPage } from '../tambah-addres/tambah-addres';
+import { UserAddresPage } from '../tambah-addres/tambah-addres';
 import { UserDataProvider } from '../../providers/user-data';
 /*
   Generated class for the ShowAddresPage page.
@@ -56,7 +56,7 @@ lokasi:{lat?: number, lng?: number, address_user?: string, addres_name?: string}
          }
 
 add() {
-      this.navCtrl.push(TambahAddresPage);
+      this.navCtrl.push(UserAddresPage);
     }
 
 }

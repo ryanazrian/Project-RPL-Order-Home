@@ -9,12 +9,13 @@ import { Connectivity } from '../providers/connectivity-service';
 import { GoogleMaps } from '../providers/google-maps';
 import { Network } from '@ionic-native/network';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TabsCust } from '../pages/tabs-cust/tabs-cust';
 import { Login } from '../pages/login/login';
 import { Daftartoko } from '../pages/daftartoko/daftartoko';
 import { OrderAddresPage } from '../pages/order-addres/order-addres';
@@ -26,6 +27,11 @@ import { PopoverPage } from '../pages/popover/popover';
 import { UpdateProfilePage } from '../pages/update-profile/update-profile';
 import { TambahAddresPage } from '../pages/tambah/tambah';
 import { ShowAddresPage } from '../pages/show-addres/show-addres';
+import { ShopList } from '../pages/shop-list/shop-list';
+import { TabsCustomer } from '../pages/tabs-customer/tabs-customer';
+import { OrderConfirm } from '../pages/order-confirm/order-confirm';
+import { UserAddresPage } from '../pages/tambah-addres/tambah-addres';
+
 
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
@@ -55,11 +61,19 @@ import { Http } from '@angular/http';
     UpdateProfilePage,
     TambahAddresPage,
     ShowAddresPage,
-     LocationSelect
+     LocationSelect,
+     ShopList,
+     TabsCustomer,
+     OrderConfirm,
+     UserAddresPage
+
+
+
 
   ],
   imports: [
     BrowserModule,
+    Ionic2RatingModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -80,7 +94,14 @@ import { Http } from '@angular/http';
     UpdateProfilePage,
     TambahAddresPage,
     ShowAddresPage,
-     LocationSelect
+     LocationSelect,
+     ShopList,
+     TabsCustomer,
+     OrderConfirm,
+     UserAddresPage
+
+
+
 
   ],
   providers: [

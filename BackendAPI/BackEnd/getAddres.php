@@ -5,9 +5,8 @@
     header('Access-Control-Allow-Header; Content-Type');
 
   include 'config.php';
-    //$id=$_GET['user'];
-    $query_user = mysqli_query($conn, "SELECT shop_name,addres_user,stars FROM shop O JOIN addres R
-      ON O.user_id=R.user_id JOIN Rating  T On O.shop_id=T.shop_id ");
+    $id=$_GET['user'];
+    $query_user = mysqli_query($conn, "SELECT * FROM addres  WHERE user_id='$id' ");
 
     $result_set = array();
     while($result =mysqli_fetch_assoc($query_user)){

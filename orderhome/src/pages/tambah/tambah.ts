@@ -5,6 +5,9 @@ import { PilihPage} from '../pilih/pilih';
 import { Http } from '@angular/http';
 import { TabsPage} from '../tabs/tabs';
 import { UserDataProvider } from '../../providers/user-data';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '../../providers/google-maps';
+
 
 
 declare var google: any;

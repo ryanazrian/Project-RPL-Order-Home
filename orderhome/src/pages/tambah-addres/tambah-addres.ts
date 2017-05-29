@@ -17,7 +17,7 @@ declare var google: any;
   selector: 'page-tambah-addres',
   templateUrl: 'tambah-addres.html'
 })
-export class TambahAddresPage {
+export class UserAddresPage {
   user: {username?: string,user_id?:string} = {};
   lokasi:{lat?: number, lng?: number, address_user?: string, address_name?: string}={};
   submitted = false;

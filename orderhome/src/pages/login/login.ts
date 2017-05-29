@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PilihPage } from '../pilih/pilih';
 import { TabsPage } from '../tabs/tabs';
+import { TabsCustomer } from '../tabs-customer/tabs-customer';
 import { NavController,ToastController,LoadingController, NavParams  } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { NgForm } from '@angular/forms';
@@ -42,7 +43,14 @@ export class Login {
              let user=response.data;
              this.userDataProvider.login(user.user_id,user.username,user.user_status,user.name,user.phone_number,user.email);
              console.log(user);
-             this.navCtrl.push(TabsPage);
+
+             if(response.data.user_status =="customer"){
+                this.navCtrl.push(TabsCustomer);
+             }
+             else{
+               this.navCtrl.push(TabsPage);
+             }
+
 
            } else {
              this.showAlert(response.message);

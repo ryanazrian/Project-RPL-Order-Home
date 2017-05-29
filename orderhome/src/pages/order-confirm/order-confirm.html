@@ -1,0 +1,83 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+	<ion-item>
+		<div item-left>
+			Rincian Biaya
+		</div>
+		<div item-right>
+			<ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.month"></ion-datetime>
+		</div>
+	</ion-item>
+	<ion-list>
+		<ion-item>
+			<div>
+				<ion-icon name="bookmark" item-left></ion-icon>
+				Galon
+			</div>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						aqua
+					</ion-col>
+					<ion-col>
+						1 buah
+					</ion-col>
+					<ion-col>
+						harga
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-item>
+		<ion-item>
+			<div>
+				<ion-icon name="bookmark" item-left></ion-icon>
+				LPG
+			</div>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						12kg
+					</ion-col>
+					<ion-col>
+						1 buah
+					</ion-col>
+					<ion-col>
+						harga
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-item>
+	</ion-list>
+	<ion-grid>
+		<ion-row justify-content-end>
+			<ion-col col-3>
+			jumlah harga
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-list>
+		<ion-item>
+			<ion-label stacked>Lokasi</ion-label>
+				<ion-icon name="navigate" item-left></ion-icon>
+		</ion-item>
+		<ion-item>
+			<ion-label stacked>Detail Lokasi</ion-label>
+				<ion-icon name="locate" item-left></ion-icon>
+				<ion-input type="text"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label stacked>Nama Penerima</ion-label>
+				<ion-icon name="contact" item-left></ion-icon>
+		</ion-item>
+		<ion-item>
+			<ion-label stacked>Notes</ion-label>
+				<ion-icon name="book" item-left></ion-icon>
+				<ion-input type="text"></ion-input>
+		</ion-item>
+	</ion-list>
+  <button padding ion-button block (click)="pindahReview()">OK</button>
+
+</ion-content>
