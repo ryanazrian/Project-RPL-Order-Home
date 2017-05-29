@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 22, 2017 at 05:17 
+-- Generation Time: May 29, 2017 at 04:48 
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -27,22 +27,44 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addres` (
+  `addres_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `addres_name` text NOT NULL,
-  `addres_province` text NOT NULL,
-  `addres_city` text NOT NULL,
-  `addres_state` text NOT NULL,
-  `addres_street` text NOT NULL
+  `addres_user` text NOT NULL,
+  `longitude` double NOT NULL,
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `addres`
 --
 
-INSERT INTO `addres` (`user_id`, `addres_name`, `addres_province`, `addres_city`, `addres_state`, `addres_street`) VALUES
-(5, 'home', 'DKI Jakarta', 'Jakarta Selatan', 'Pasar Minggu', 'Jalan Kebagusan Raya No.4'),
-(14, 'Shop', 'DKI Jakarta', 'Jakarta Selatan', 'Tebet', 'Tebet Dalam no19'),
-(15, 'shop', 'DKI Jakarta', 'Jakarta Barat', 'Pejompongan', 'mall indonesia');
+INSERT INTO `addres` (`addres_id`, `user_id`, `addres_name`, `addres_user`, `longitude`, `latitude`) VALUES
+(24, 32, 'test', '2122', 12313, 1313),
+(25, 32, 'home', 'user Pengadegan Pancoran KOTA ADM. JAKARTA SELATAN DKI Jakarta', -6.2526107, 106.80800750000003),
+(27, 15, 'Home', 'RT:12/RW:9 Gunung Sahari Selatan Kemayoran KOTA ADM. JAKARTA PUSAT DKI Jakarta', -6.1579093, 106.8470611),
+(28, 14, 'Shop', 'jakarta Barat', -2013321313, 21314124567);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lokasi`
+--
+
+CREATE TABLE `lokasi` (
+  `id_lokasi` int(11) NOT NULL,
+  `lokasi_nama` text NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lokasi`
+--
+
+INSERT INTO `lokasi` (`id_lokasi`, `lokasi_nama`, `latitude`, `longitude`) VALUES
+(1, '', -29199133, 991821212),
+(2, 'test', -29199133, 991821212);
 
 -- --------------------------------------------------------
 
@@ -90,7 +112,9 @@ CREATE TABLE `Rating` (
 
 INSERT INTO `Rating` (`stars`, `review`, `shop_id`, `user_id`) VALUES
 (5, 'nice', 1, 5),
-(4, 'gg', 3, 13);
+(4, 'gg', 3, 13),
+(4, 'nice shop', 4, 43),
+(1, 'poor shop', 5, 42);
 
 -- --------------------------------------------------------
 
@@ -165,11 +189,21 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `user_status`, `name`, `p
 (5, 'bob11', '1234', 'customer', '', '0', ''),
 (13, 'dragon', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'apa aja', '98898822', 'email@o.com'),
 (14, 'alibaba', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'al baaba', '2147483647', 'wkkwkwk@wkwk.com'),
-(15, 'tokopedia', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'jhon Hammond', '2147483647', 'aksdkaksdkan@ahsh.com'),
+(15, 'tokopedia', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'Tokopedia ajah', '2147483647', 'aksdkaksdkan@ahsh.com'),
 (16, 'bambangtop', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'bambang yayar', '091213213123', 'bambang@hotmail.com'),
 (19, 'rr11', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'rr', '213123123', 'asdasdasd'),
-(20, 'adsasdas', '17175b7d49a74685b02d656856387878', 'customer', '343241', '4214244', 'dasdasdsa'),
-(21, 'jhon41', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'Jhon Wick', '232124421412', 'wick123@gmail.com');
+(20, 'blibli', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'blibli ajah', '091029928398', 'blibli@apaaja.com'),
+(21, 'jhon41', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'Jhon Wick', '232124421412', 'wick123@gmail.com'),
+(23, 'prana', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'pranayadna aff', '77888212212', 'pran@yahoo.com'),
+(24, 'customer', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'saya customer', '09982212331', 'custom@cust.com'),
+(32, 'testrr8', '81dc9bdb52d04dc20036dbd8313ed055', 'seller', 'tester', '92398391', 'jad@ad.com'),
+(39, 'tester', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'tester', '13', 'tester@gmail.com'),
+(40, 'user1', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'user1', '422', 'user1'),
+(41, 'test1', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'sada', '231', 'adwdad'),
+(42, 'test12', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'test12', '213214412', 'adwd'),
+(43, 'coba', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'Coba ini error', '1234', 'coba@gmail.com'),
+(44, 'nugroho', '81dc9bdb52d04dc20036dbd8313ed055', 'customer', 'Nugroho', '0910930193', 'nuh@gmail.com'),
+(45, 'user', '202cb962ac59075b964b07152d234b70', 'seller', 'user12', '12313', 'sadad');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +213,14 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `user_status`, `name`, `p
 -- Indexes for table `addres`
 --
 ALTER TABLE `addres`
+  ADD PRIMARY KEY (`addres_id`),
   ADD KEY `addres_user_id_FK` (`user_id`);
+
+--
+-- Indexes for table `lokasi`
+--
+ALTER TABLE `lokasi`
+  ADD PRIMARY KEY (`id_lokasi`);
 
 --
 -- Indexes for table `order_goods`
@@ -222,6 +263,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `addres`
+--
+ALTER TABLE `addres`
+  MODIFY `addres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `lokasi`
+--
+ALTER TABLE `lokasi`
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `order_goods`
 --
 ALTER TABLE `order_goods`
@@ -240,7 +291,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- Constraints for dumped tables
 --
