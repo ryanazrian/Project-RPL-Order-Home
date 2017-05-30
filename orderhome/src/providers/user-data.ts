@@ -52,8 +52,7 @@ export class UserDataProvider {
     this.loginState = true;
   }
 
-  addres(address_name,address_user,lat,lng) {
-    this.storage.set('addres_name', address_name);
+  addres(address_user,lat,lng) {
     this.storage.set('address_user', address_user);
     this.storage.set('latitude', lat);
     this.storage.set('longitude',lng);

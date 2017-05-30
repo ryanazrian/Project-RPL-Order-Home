@@ -160,7 +160,7 @@ export class UserAddresPage {
                 console.log(data);
               let response = data.json();
                if(response.status == 200){
-                 this.userDataProvider.addres(this.lokasi.address_name,this.lokasi.address_user,this.lokasi.lat,this.lokasi.lng);
+                 //this.userDataProvider.addres(this.lokasi.address_name,this.lokasi.address_user,this.lokasi.lat,this.lokasi.lng);
                   this.navCtrl.setRoot(ShowAddresPage);
                   }
                   this.showAlert(response.message);
