@@ -52,8 +52,8 @@ export class UserDataProvider {
     this.loginState = true;
   }
 
-  addres(address_user,lat,lng) {
-    this.storage.set('address_user', address_user);
+  addres(addres_user,lat,lng) {
+    this.storage.set('addres_user', addres_user);
     this.storage.set('latitude', lat);
     this.storage.set('longitude',lng);
   }
@@ -97,6 +97,11 @@ export class UserDataProvider {
       return value;
     });
   }
+  getStatus() {
+    return this.storage.get('user_status').then((value) => {
+      return value;
+    });
+  }
   getEmail() {
     return this.storage.get('email').then((value) => {
       return value;
@@ -107,11 +112,7 @@ export class UserDataProvider {
       return value;
     });
   }
-  getAddresName() {
-    return this.storage.get('addres_name').then((value) => {
-      return value;
-    });
-  }
+
   getAddresUser() {
     return this.storage.get('addres_user').then((value) => {
       return value;

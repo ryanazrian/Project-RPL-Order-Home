@@ -16,7 +16,7 @@ import { UserDataProvider } from '../../providers/user-data';
 })
 export class ShowAddresPage {
 user: {username?: string,user_id?:string} = {};
-lokasi:{lat?: number, lng?: number, address_user?: string, addres_name?: string}={};
+lokasi:{lat?: number, lng?: number, addres_user?: string, addres_name?: string}={};
 
 
   constructor(public navCtrl: NavController,
@@ -27,7 +27,6 @@ lokasi:{lat?: number, lng?: number, address_user?: string, addres_name?: string}
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShowAddresPage');
     this.getID();
-    this.getAddresName();
     this.getUsername();
     this.getAddresUser();
   }
@@ -44,14 +43,9 @@ lokasi:{lat?: number, lng?: number, address_user?: string, addres_name?: string}
          this.user.username = username;
        });
      }
-     getAddresName() {
-         this.userDataProvider.getAddresName().then((username) => {
-           this.lokasi.addres_name = username;
-         });
-       }
      getAddresUser() {
            this.userDataProvider.getAddresUser().then((username) => {
-             this.lokasi.address_user = username;
+             this.lokasi.addres_user = username;
            });
          }
 

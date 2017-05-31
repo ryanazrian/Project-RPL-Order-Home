@@ -6,14 +6,15 @@ import { GoogleMaps } from '../../providers/google-maps';
 import { TabsCustomer} from '../tabs-customer/tabs-customer';
 import { Http } from '@angular/http';
 import { UserDataProvider } from '../../providers/user-data';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-location-select',
   templateUrl: 'location-select.html'
 })
 export class LocationSelect {
-user: {username?: string,user_id?:string} = {};
-lokasi: {address_user?: string,lat?: string, lng?: string} = {};
+user: {username?: string,user_id?:string,user_status?:string} = {};
+lokasi: {addres_user?: string,lat?: string, lng?: string} = {};
 
 
     @ViewChild('map') mapElement: ElementRef;
@@ -45,12 +46,18 @@ lokasi: {address_user?: string,lat?: string, lng?: string} = {};
 
               ionViewWillEnter() {
                    this.getID();
+                   this.getStatus();
                }
                getID() {
                    this.userDataProvider.getID().then((username) => {
                      this.user.user_id = username;
                    });
                  }
+                 getStatus() {
+                     this.userDataProvider.getStatus().then((username) => {
+                       this.user.user_status = username;
+                     });
+                   }
 
     ionViewDidLoad(): void {
 
@@ -135,9 +142,14 @@ lokasi: {address_user?: string,lat?: string, lng?: string} = {};
                     let response = data.json();
                     if(response.status == 200){
                       let user=response.data;
-                      //this.userDataProvider.addres(this.lokasi.address_user,this.lokasi.lat,this.lokasi.lng);
-                       this.navCtrl.setRoot(TabsCustomer);
-
+                      this.userDataProvider.addres(this.lokasi.addres_user,this.lokasi.lat,this.lokasi.lng);
+                      console.log(user);
+                      if(response.data.user_status =="customer"){
+                         this.navCtrl.push(TabsCustomer);
+                      }
+                      else{
+                        this.navCtrl.push(TabsPage);
+                      }
                     }
 
 

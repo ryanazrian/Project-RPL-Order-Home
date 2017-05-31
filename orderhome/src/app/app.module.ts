@@ -25,7 +25,6 @@ import { SignPageSeller } from '../pages/signup-seller/signup-seller';
 import { AccountPage } from '../pages/account/account';
 import { PopoverPage } from '../pages/popover/popover';
 import { UpdateProfilePage } from '../pages/update-profile/update-profile';
-import { TambahAddresPage } from '../pages/tambah/tambah';
 import { ShowAddresPage } from '../pages/show-addres/show-addres';
 import { ShopList } from '../pages/shop-list/shop-list';
 import { TabsCustomer } from '../pages/tabs-customer/tabs-customer';
@@ -59,7 +58,6 @@ import { Http } from '@angular/http';
     AccountPage,
     PopoverPage,
     UpdateProfilePage,
-    TambahAddresPage,
     ShowAddresPage,
      LocationSelect,
      ShopList,
@@ -92,7 +90,6 @@ import { Http } from '@angular/http';
     AccountPage,
     PopoverPage,
     UpdateProfilePage,
-    TambahAddresPage,
     ShowAddresPage,
      LocationSelect,
      ShopList,
