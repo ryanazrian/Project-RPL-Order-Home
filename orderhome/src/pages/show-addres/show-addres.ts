@@ -4,6 +4,7 @@ import { PopoverPage } from '../popover/popover';
 import { PopoverController } from 'ionic-angular';
 import { UserAddresPage } from '../tambah-addres/tambah-addres';
 import { UserDataProvider } from '../../providers/user-data';
+import { Http } from '@angular/http';
 /*
   Generated class for the ShowAddresPage page.
 
@@ -16,11 +17,12 @@ import { UserDataProvider } from '../../providers/user-data';
 })
 export class ShowAddresPage {
 user: {username?: string,user_id?:string} = {};
-lokasi:{lat?: number, lng?: number, addres_user?: string, addres_name?: string}={};
+alamat: any;
 
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              public http: Http,
                public userDataProvider:UserDataProvider,
               public popoverCtrl: PopoverController) {}
 
@@ -28,10 +30,10 @@ lokasi:{lat?: number, lng?: number, addres_user?: string, addres_name?: string}=
     console.log('ionViewDidLoad ShowAddresPage');
     this.getID();
     this.getUsername();
-    this.getAddresUser();
+
   }
   ionViewWillEnter() {
-
+    this.getAlamat();
    }
    getID() {
        this.userDataProvider.getID().then((username) => {
@@ -43,14 +45,18 @@ lokasi:{lat?: number, lng?: number, addres_user?: string, addres_name?: string}=
          this.user.username = username;
        });
      }
-     getAddresUser() {
-           this.userDataProvider.getAddresUser().then((username) => {
-             this.lokasi.addres_user = username;
-           });
-         }
 
-add() {
+
+    add() {
       this.navCtrl.push(UserAddresPage);
     }
-
+    getAlamat(){
+    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getAddres.php?user=49").subscribe(data => {
+      let response = data.json();
+      console.log(response);
+      if(response.status=="200"){
+        this.alamat= response.data;   //ini disimpen ke variabel pasien diatas itu ,, yang udah di delacre
+      }
+    });
+  }
 }
