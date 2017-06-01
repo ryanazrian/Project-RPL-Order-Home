@@ -5,8 +5,8 @@
     header('Access-Control-Allow-Header; Content-Type');
 
   include 'config.php';
-
-    $query_user = mysqli_query($conn, "SELECT * FROM user");
+    $id=$_GET['user'];
+    $query_user = mysqli_query($conn, "SELECT * FROM order_goods s join user WHERE user_id='$id'");
 
     $result_set = array();
     while($result =mysqli_fetch_assoc($query_user)){
