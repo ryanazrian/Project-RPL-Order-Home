@@ -16,3 +16,6 @@ This project to complete our assigment for Software Enginering
 # Penting lagi!!
 1. Untuk back end,taruh folder BackEnd di htdoc,setelah sebelumnya install xampp
 2. Import sql di php my admin,setelah sebelumnya mengaktifkan xampp nya
+
+
+#note:vitorizkiimanda itu ainil, laptopnya dipinjam
