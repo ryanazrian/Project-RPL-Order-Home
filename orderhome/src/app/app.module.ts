@@ -30,6 +30,7 @@ import { ShopList } from '../pages/shop-list/shop-list';
 import { TabsCustomer } from '../pages/tabs-customer/tabs-customer';
 import { OrderConfirm } from '../pages/order-confirm/order-confirm';
 import { UserAddresPage } from '../pages/tambah-addres/tambah-addres';
+import { AwalPage } from '../pages/awal/awal';
 
 
 import { StatusBar } from 'ionic-native';
@@ -51,6 +52,7 @@ import { Http } from '@angular/http';
     TabsPage,
     Daftartoko,
     Login,
+    AwalPage,
     OrderAddresPage,
     PilihPage,
     SignPage,
@@ -91,6 +93,7 @@ import { Http } from '@angular/http';
     PopoverPage,
     UpdateProfilePage,
     ShowAddresPage,
+    AwalPage,
      LocationSelect,
      ShopList,
      TabsCustomer,

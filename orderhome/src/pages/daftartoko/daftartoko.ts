@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { OrderPage } from '../order/order';
-/**
- * Generated class for the Daftartoko page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { NavController } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-daftartoko',
   templateUrl: 'daftartoko.html',
 })
 export class Daftartoko {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  rating : any;
+  constructor(public navCtrl: NavController, public http:Http) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Daftartoko');
   }
-  pesan(){
-  		this.navCtrl.push(OrderPage);
-  	}
+   getdataPembeli(){
+    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getRating.php?user="+3).subscribe(data => {
+      let response = data.json();
+      console.log(response);
+      if(response.status=="200"){
+        this.rating = response.data;   //ini disimpen ke variabel pasien diatas itu ,, yang udah di delacre
+      }
+    }); 
+	}
 }

@@ -7,12 +7,72 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>awal</ion-title>
+    <ion-title>Tambah Barang</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+
+  
+		<ion-list no-lines>
+
+      <ion-item>
+				<ion-label stacked>Jenis</ion-label>
+				<ion-input [(ngModel)]="type" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label stacked>Merk</ion-label>
+				<ion-input [(ngModel)]="brand" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+      <ion-item>
+				<ion-label stacked>Harga</ion-label>
+				<ion-input [(ngModel)]="price" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+			
+			<!--<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left>
+				Email harus diisi
+			</p>-->
+        <!--<ion-item>
+          <ion-label stacked color="primary">Jenis</ion-label>
+          <ion-input [(ngModel)]="type" placeholder="Jenis" name="type" type="text" #jenis="ngModel" required>
+          </ion-input>
+        </ion-item>-->
+        <!--<p ion-text [hidden]="jenis.valid || submitted == false" color="danger" padding-left>
+          Type is required
+        </p>-->
+
+        <!--<ion-item>
+          <ion-label stacked color="primary">Brand</ion-label>
+          <ion-input [(ngModel)]="brand" placeholder="Merk" name="brand" type="text" #brand="ngModel" required>
+          </ion-input>
+        </ion-item>-->
+        <!--<p ion-text [hidden]="brand.valid || submitted == false" color="danger" padding-left>
+          Brand is required
+        </p>-->
+
+         <!--<ion-item>
+          <ion-label stacked color="primary">Harga</ion-label>
+          <ion-input [(ngModel)]="price" placeholder="Harga" name="price" type="number" #price="ngModel" required>
+          </ion-input>
+        </ion-item>-->
+        <!--<p ion-text [hidden]="price.valid || submitted == false" color="danger" padding-left>
+          Price is required
+        </p>-->
+      </ion-list>
+
+		<ion-row responsive-sm>
+			<ion-col>
+				<button ion-button (click)="tambahbarang()" type="submit" block>Tambah</button>
+			</ion-col>
+		</ion-row>
+
+	
 
 </ion-content>
