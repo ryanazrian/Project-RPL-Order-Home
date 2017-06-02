@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-
+import { CustReview } from '../cust-review/cust-review';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-konfirmasi',
-  templateUrl: 'konfirmasi.html'
+  selector: 'cust-konfirm',
+  templateUrl: 'cust-konfirm.html'
 })
 export class CustKonfirm {
 
@@ -21,7 +21,7 @@ export class CustKonfirm {
   }
 
   pindahReview(){
-	
+	this.navCtrl.push(CustReview);
   }
 
 }

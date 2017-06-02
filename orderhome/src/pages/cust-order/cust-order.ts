@@ -34,25 +34,25 @@ export class CustOrder {
   galonkurang(){
     if (this.jumlahgalon > 0){
     this.jumlahgalon--;
-    // this.galonharga = this.galonharga - 15000;
+     this.galonharga = this.galonharga - 15000;
     }
   }
 
   galontambah(){
     this.jumlahgalon++;
-    // this.galonharga = this.galonharga + 15000;
+    this.galonharga = this.galonharga + 15000;
   }
 
   lpgkurang(){
     if (this.jumlahlpg > 0){
     this.jumlahlpg--;
-    // this.hargalpg = this.hargalpg - 15000;
+     this.hargalpg = this.hargalpg - 15000;
     }
   }
 
   lpgtambah(){
     this.jumlahlpg++;
-    // this.hargalpg = this.hargalpg + 15000;
+     this.hargalpg = this.hargalpg + 15000;
   }
 
   ionViewDidLoad() {

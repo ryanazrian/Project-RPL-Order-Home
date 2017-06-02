@@ -34,6 +34,7 @@ import { AwalPage } from '../pages/awal/awal';
 import { CustDaftarToko } from '../pages/cust-daftar-toko/cust-daftar-toko';
 import { CustOrder } from '../pages/cust-order/cust-order';
 import { CustKonfirm } from '../pages/cust-konfirm/cust-konfirm';
+import { CustReview } from '../pages/cust-review/cust-review';
 
 import { StatusBar } from 'ionic-native';
 import { Splashscreen } from 'ionic-native';
@@ -70,7 +71,8 @@ import { Http } from '@angular/http';
      UserAddresPage,
      CustDaftarToko,
      CustOrder,
-     CustKonfirm
+     CustKonfirm,
+     CustReview
 
 
 
@@ -106,7 +108,8 @@ import { Http } from '@angular/http';
      UserAddresPage,
      CustDaftarToko,
      CustOrder,
-     CustKonfirm
+     CustKonfirm,
+     CustReview
 
 
 

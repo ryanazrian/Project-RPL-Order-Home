@@ -6,7 +6,7 @@
 
   include 'config.php';
     $id=$_GET['user'];
-    $query_user = mysqli_query($conn, "SELECT * FROM shop s JOIN Rating r ON r.shop_id=s.shop_id AND s.user_id=$id");
+    $query_user = mysqli_query($conn, "SELECT * FROM shop WHERE user_id='$id'");
 
     $result_set = array();
     while($result =mysqli_fetch_assoc($query_user)){
