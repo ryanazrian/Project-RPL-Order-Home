@@ -56,6 +56,10 @@ export class UserDataProvider {
     this.storage.set('shop_name',shop_name);
 
   }
+  goods(total_price,order_quantity){
+    this.storage.set('total_price',total_price);
+    this.storage.set('order_quantity',order_quantity)
+  }
   addres(addres_user,lat,lng) {
     this.storage.set('addres_user', addres_user);
     this.storage.set('latitude', lat);
@@ -141,6 +145,16 @@ export class UserDataProvider {
 
   getShopName() {
     return this.storage.get('shop_name').then((value) => {
+      return value;
+    });
+  }
+  getQuantity() {
+    return this.storage.get('order_quantity').then((value) => {
+      return value;
+    });
+  }
+  getPrice() {
+    return this.storage.get('total_price').then((value) => {
       return value;
     });
   }

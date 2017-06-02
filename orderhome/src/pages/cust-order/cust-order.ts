@@ -54,7 +54,9 @@ export class CustOrder {
     this.jumlahlpg++;
      this.hargalpg = this.hargalpg + 15000;
   }
-
+  totalHarga(){
+    
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlamatPage');
   }
