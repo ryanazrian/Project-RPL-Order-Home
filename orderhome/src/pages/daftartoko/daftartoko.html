@@ -6,24 +6,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
- <ion-list>
-   <ion-item>
-    <ion-thumbnail item-left>
-      <img src="assets/gambar/profile.png">
-    </ion-thumbnail>
-    <h2>Username : Username</h2>
-     <!--disini diisi star-->
-  </ion-item>
-</ion-list>
+<ion-content padding >
+  <ion-card *ngFor="let data of rating">
+    <ion-item >
+      <h2>Stars : {{data.stars}}</h2>
+    </ion-item>
+    <ion-card-content>
+    <p>Review : {{data.review}}</p>
+  </ion-card-content>
 
-<ion-list>
-   <ion-item>
-    <ion-thumbnail item-left>
-      <img src="assets/gambar/profile.png">
-    </ion-thumbnail>
-    <h2>Username : Username</h2>
-     <!--disini diisi star-->
-  </ion-item>
-</ion-list>
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

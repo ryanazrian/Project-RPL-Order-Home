@@ -10,29 +10,23 @@ var dateNow = new Date();
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-  pembeli : any;
-  tanggalpesan = dateNow;
-  user_id : number;
-  name : string;
-  phonenumber : number;
-  alamat : string;
+  order : any;
 
   constructor(public navCtrl: NavController,public userData: UserDataProvider, public http: Http,public alertCtrl: AlertController) {
   }
 
-  ngAfterViewInit() {
-    // this.getPenjual();
+  ionViewWillEnter() {
     this.getdataPembeli();
-  }
+   }
 
-  getdataPembeli(){
-    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getOrder.php?user="+15).subscribe(data => {
+   getdataPembeli(){
+    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getOrder.php?user=15").subscribe(data => {
       let response = data.json();
       console.log(response);
       if(response.status=="200"){
-        this.pembeli = response.data;  
+        this.order = response.data;   //ini disimpen ke variabel pasien diatas itu ,, yang udah di delacre
       }
-    }); 
+    });
   }
 
   // getPenjual() {
@@ -64,18 +58,18 @@ export class ContactPage {
             //       this.pasien= response.data;
             //       let alert = this.alertCtrl.create({
             //         title: 'Pasien Terhapus',
-            //         subTitle: '',      
+            //         subTitle: '',
             //         buttons: ['OK']
             //       });
             //       this.vibration.vibrate(1000);
             //       alert.present();
-                
-            //       this.ionViewWillEnter();   
+
+            //       this.ionViewWillEnter();
             //     }
             //     else {
             //           let alert = this.alertCtrl.create({
             //         title: 'Gagal Menghapus',
-            //         subTitle: '',      
+            //         subTitle: '',
             //         buttons: ['OK']
             //       });
             //       this.vibration.vibrate(1000);
@@ -85,11 +79,10 @@ export class ContactPage {
             }
 
           }
-        
+
       ]
     });
     confirm.present();
   }
 
 }
-

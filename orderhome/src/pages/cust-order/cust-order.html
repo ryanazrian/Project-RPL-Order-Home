@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stok
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-border>
+          <ion-item>
+          <ion-label>Galon Aqua</ion-label>
+            <img src='assets/gambar/galon.png' width="15%" height="20%" item-left>
+          </ion-item>
+          <ion-grid>
+            <ion-row justify-content-between>
+              <ion-col col-3>
+                Rp.{{galonharga}}
+              </ion-col>
+              <ion-col col-3>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon icon-only name="remove-circle" (click)="galonkurang()"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      {{jumlahgalon}}
+                    </ion-col>
+                    <ion-col>
+                      <ion-icon icon-only name="add-circle" (click)="galontambah()"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-item>
+          <ion-label>LPG 3kg</ion-label>
+            <img src='assets/gambar/gas3kg.jpg' width="15%" height="20%" item-left>
+          </ion-item>
+        </ion-list>
+         <ion-grid>
+            <ion-row justify-content-between>
+              <ion-col col-3>
+                Rp.{{hargalpg}}
+              </ion-col>
+              <ion-col col-3>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon icon-only name="remove-circle" (click)="lpgkurang()"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      {{jumlahlpg}}
+                    </ion-col>
+                    <ion-col>
+                      <ion-icon icon-only name="add-circle" (click)="lpgtambah()"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      <div class text-center>
+  <button ion-button icon-right (click)="pindahpage()" clear>
+  Submit
+  <ion-icon name="add"></ion-icon>
+  </button>
+</div>
+
+</ion-content>

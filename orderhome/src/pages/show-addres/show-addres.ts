@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverController } from 'ionic-angular';
-import { UserAddresPage } from '../tambah-addres/tambah-addres';
+import { LocationSelect } from '../location-select/location-select';
 import { UserDataProvider } from '../../providers/user-data';
 import { Http } from '@angular/http';
 /*
@@ -47,11 +47,11 @@ alamat: any;
      }
 
 
-    add() {
-      this.navCtrl.push(UserAddresPage);
+    tambah() {
+      this.navCtrl.push(LocationSelect);
     }
     getAlamat(){
-    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getAddres.php?user=49").subscribe(data => {
+    this.http.get("http://127.0.0.1/OrderHome/BackEnd/getAddres.php?user="+this.user.user_id).subscribe(data => {
       let response = data.json();
       console.log(response);
       if(response.status=="200"){

@@ -7,28 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngFor="let item of order">
    <ion-item>
     <ion-thumbnail item-left>
       <img src="assets/gambar/profile.png">
     </ion-thumbnail>
-    <h2>Username : Username</h2>
-    <h2>Nama : Nama</h2>
-    <h2>Contact : Phonenumber</h2>
-    <h2>Alamat : Alamat</h2>
-     <button ion-button (click)="selesai()">Selesai</button>
-  </ion-item>
-</ion-list>
-
- <ion-list>
-   <ion-item>
-    <ion-thumbnail item-left>
-      <img src="assets/gambar/profile.png">
-    </ion-thumbnail>
-    <h2>Username : Username</h2>
-    <h2>Nama : Nama</h2>
-    <h2>Contact : Phonenumber</h2>
-    <h2>Alamat : Alamat</h2>
+    <h2>Username : {{data.username}}</h2>
+    <h2>Nama : {{data.name}}</h2>
+    <h2>Contact : {{data.phone_numer}}</h2>
+    <h2>Alamat : {{data.addres_user}}</h2>
      <button ion-button (click)="selesai()">Selesai</button>
   </ion-item>
 </ion-list>

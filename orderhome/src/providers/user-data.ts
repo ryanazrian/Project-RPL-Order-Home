@@ -51,7 +51,11 @@ export class UserDataProvider {
     this.events.publish('user:login');
     this.loginState = true;
   }
+  shop(shop_id,shop_name){
+    this.storage.set('shop_id',shop_id);
+    this.storage.set('shop_name',shop_name);
 
+  }
   addres(addres_user,lat,lng) {
     this.storage.set('addres_user', addres_user);
     this.storage.set('latitude', lat);
@@ -125,6 +129,18 @@ export class UserDataProvider {
   }
   getlatitude() {
     return this.storage.get('latitude').then((value) => {
+      return value;
+    });
+  }
+
+  getShopId() {
+    return this.storage.get('shop_id').then((value) => {
+      return value;
+    });
+  }
+
+  getShopName() {
+    return this.storage.get('shop_name').then((value) => {
       return value;
     });
   }
