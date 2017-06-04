@@ -1,22 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Order List
+      Review
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list *ngFor="let item of order">
-   <ion-item>
-    <ion-thumbnail item-left>
-      <img src="assets/gambar/profile.png">
-    </ion-thumbnail>
-    <h2>Username : {{data.username}}</h2>
-    <h2>Nama : {{data.name}}</h2>
-    <h2>Contact : {{data.phone_numer}}</h2>
-    <h2>Alamat : {{data.addres_user}}</h2>
-     <button ion-button (click)="selesai()">Selesai</button>
-  </ion-item>
-</ion-list>
+<ion-content padding >
+  <ion-card *ngFor="let data of order">
+    <ion-item >
+      <h2>Date : {{data.order_date}}</h2>
+    </ion-item>
+    <ion-card-content>
+    <p>Name : {{data.name}}</p>
+    <p>Alamat : {{data.addres_user}}</p>
+    <p>Name : {{data.name}}</p>
+    <p>Merek : {{data.brand}}</p>
+    <p>Quantity : {{data.order_quantity}}</p>
+    <p>Total : {{data.total_cost_payment}}</p>
+  </ion-card-content>
+
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
