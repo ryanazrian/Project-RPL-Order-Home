@@ -13,10 +13,20 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CustReview {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    
+    bintang=0;
+    constructor(public navCtrl: NavController) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CustReview');
+    kurangbintang(){
+  		if(this.bintang > 0 && this.bintang <= 5){
+        this.bintang--;
+      }
+  	}
+
+  	tambahbintang(){
+      if(this.bintang < 5){
+  		this.bintang++;
+  	}
+    }
   }
-
-}

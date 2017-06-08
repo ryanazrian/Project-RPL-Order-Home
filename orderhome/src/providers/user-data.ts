@@ -58,8 +58,12 @@ export class UserDataProvider {
   }
   goods(total_price,order_quantity){
     this.storage.set('total_price',total_price);
-    this.storage.set('order_quantity',order_quantity)
+    this.storage.set('order_quantity',order_quantity);
+  //  this.storage.set('order_quantity',order_quantity);
+
+
   }
+
   addres(addres_user,lat,lng) {
     this.storage.set('addres_user', addres_user);
     this.storage.set('latitude', lat);
@@ -159,18 +163,5 @@ export class UserDataProvider {
     });
   }
 
-  // return a promise
-  // hasLoggedIn(val = this.getToken()) {
-  //   this.jwt = val;
-  //   this.input = JSON.stringify({jwtToken: this.jwt});
 
-  //   this.http.post('http://cybex.ipb.ac.id/test/check.php', this.input).subscribe((ret) => {
-  //     this.out = ret.json();
-  //     if(this.out.status){
-  //       this.loginState = true;
-  //     }else{
-  //       this.loginState = false;
-  //     }
-  //   });
-  // }
 }

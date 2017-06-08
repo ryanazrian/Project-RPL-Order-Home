@@ -19,6 +19,7 @@ export class CustOrder {
   galonharga=0;
   hargalpg=0;
   jumlahlpg=0;
+  total_price=0;
   brand:string;
   price:number;
   quantity:number;
@@ -55,7 +56,7 @@ export class CustOrder {
      this.hargalpg = this.hargalpg + 15000;
   }
   totalHarga(){
-    
+    this.total_price = this.hargalpg+this.galonharga;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlamatPage');
