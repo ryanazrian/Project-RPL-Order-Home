@@ -30,6 +30,7 @@
     "@ionic/storage": "1.1.7",
     "@types/google-maps": "^3.2.0",
     "angular2-google-maps": "^0.17.0",
+    "cordova-android": "5.1.1",
     "ionic-angular": "2.0.1",
     "ionic-native": "2.4.1",
     "ionic2-rating": "^1.2.2",
